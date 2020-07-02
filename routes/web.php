@@ -30,13 +30,7 @@ Route::delete('/home/{idPublication}', 'PublicationController@destroy');
 
 Route::get('/list/{idPublication}', 'PublicationController@destroy');
 
-Route::get('/password', function() {
-        return view('auth.passwords.reset');
-});
+Route::get('/change-password', 'UserController@index');
 
-Route::get('/change-password', 'ChangePasswordController@index');
-Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
+Route::post('change-password', 'UserController@alterarPassword')->name('change.password');
 
-Route::get('/auth/passwords/reset', 'publicacoesController@index');
-
-//Route::get('/reset', 'ResetPasswordController@showChangePasswordForm');
