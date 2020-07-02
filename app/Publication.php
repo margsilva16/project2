@@ -11,6 +11,5 @@ class Publication extends Model {
         'message',
         'user_id'
     ];
-  
 
 }

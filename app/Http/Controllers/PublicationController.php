@@ -9,14 +9,6 @@ use App\Publication;
 class PublicationController extends Controller {
 
     public function index() {
-//        $var = auth()->user()->id;
-//        $publications = DB::select('select * from publication where user_id = :user_id', ['user_id' => $var]);
-//        return view('list', ['publications' => $publications]);
-//        $publications = publication::all();
-//        return view('list', ['publications' => $publications]);
-//
-//        $user = User::where('id', auth()->user()->id)->get();
-
         $id = auth()->user()->id;
         $publications = Publication::where('user_id', $id)->get();
         return view('list', ['publications' => $publications]);
