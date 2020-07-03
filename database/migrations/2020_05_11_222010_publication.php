@@ -18,6 +18,7 @@ class Publication extends Migration {
             $table->timestamps();
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            
         });
     }
 
@@ -27,9 +28,7 @@ class Publication extends Migration {
      * @return void
      */
     public function down() {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        Schema::drop('user');
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        
     }
 
 }
