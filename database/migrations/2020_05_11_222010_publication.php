@@ -18,7 +18,6 @@ class Publication extends Migration {
             $table->timestamps();
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            
         });
     }
 
@@ -28,7 +27,7 @@ class Publication extends Migration {
      * @return void
      */
     public function down() {
-		Schema::dropIfExists('publication'); 
+        Schema::dropIfExists('publication');
     }
 
 }

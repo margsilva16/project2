@@ -2,20 +2,26 @@
 
 use Illuminate\Database\Seeder;
 
-class UserSeeder extends Seeder
-{
+class UserSeeder extends Seeder {
+
     /**
      * Run the database seeds.
      *
      * @return void
      */
-    public function run()
-    {
+    public function run() {
         DB::table('users')->insert([
-            'name' => Str::random(10),
-            'surname' => Str::random(10),
-            'email' => Str::random(10).'@gmail.com',
-            'password' => Hash::make('password'),
+            'name' => "Margarida",
+            'surname' => "Silva",
+            'email' => 'margarida' . '@gmail.com',
+            'password' => "teste",
+        ]);
+        DB::table('users')->insert([
+            'name' => "Joao",
+            'surname' => "Pedro",
+            'email' => 'joao' . '@gmail.com',
+            'password' => "teste2",
         ]);
     }
+
 }
