@@ -28,7 +28,10 @@ class Publication extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists('publication');
+         Schema::drop('publication');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Schema::drop('user_id');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 
 }
